@@ -1,0 +1,19 @@
+= form_for @time_of_arr do |f|
+  - if @time_of_arr.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@time_of_arr.errors.count, "error")} prohibited this time_of_arr from being saved:"
+      %ul
+        - @time_of_arr.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :timeOfArrival
+    = f.time_select :timeOfArrival
+  .field
+    = f.label :station
+    = f.select :station, Station.all.map {|e| [e.name, e.id]}
+  .field
+    = f.label :graphik
+    = f.select :graphik, Graphik.all.map {|e| ["Begin: " + e.station_begin.name + ", End:" + e.station_end.name, e.id]}
+  .actions
+    = f.submit 'Save'

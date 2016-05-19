@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Timeofarrival:
+  = @time_of_arr.timeOfArrival
+%p
+  %b Station:
+  = @time_of_arr.station
+%p
+  %b Graphik:
+  = "Begin: " + @time_of_arr.graphik.station_begin.name + ", End:" + @time_of_arr.graphik.station_end.name
+
+= link_to 'Edit', edit_time_of_arr_path(@time_of_arr)
+\|
+= link_to 'Back', time_of_arrs_path

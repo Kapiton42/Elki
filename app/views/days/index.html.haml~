@@ -1,0 +1,35 @@
+%h1 Listing days
+
+%table
+  %thead
+    %tr
+      %th Monday
+      %th Tuesday
+      %th Wed
+      %th Thursday
+      %th Friday
+      %th Saturday
+      %th Sunday
+      %th Graphik
+      %th
+      %th
+      %th
+
+  %tbody
+    - @days.each do |day|
+      %tr
+        %td= day.monday
+        %td= day.tuesday
+        %td= day.wed
+        %td= day.thursday
+        %td= day.friday
+        %td= day.saturday
+        %td= day.sunday
+        %td= "Begin: " + day.graphik.station_begin.name + ", End:" + day.graphik.station_end.name
+        %td= link_to 'Show', day
+        %td= link_to 'Edit', edit_day_path(day)
+        %td= link_to 'Destroy', day, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Day', new_day_path

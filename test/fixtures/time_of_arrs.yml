@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  timeOfArrival: 2016-05-19 16:06:57
+  station_id: 
+  graphik_id: 
+
+two:
+  timeOfArrival: 2016-05-19 16:06:57
+  station_id: 
+  graphik_id: 

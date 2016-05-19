@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @station.name
+%p
+  %b Tarifzone:
+  = @station.tarifZone
+%p
+  %b Number:
+  = @station.number
+
+= link_to 'Edit', edit_station_path(@station)
+\|
+= link_to 'Back', stations_path

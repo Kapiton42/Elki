@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Station begin:
+  = @graphik.station_begin.name
+%p
+  %b Station end:
+  = @graphik.station_end.name
+
+= link_to 'Edit', edit_graphik_path(@graphik)
+\|
+= link_to 'Back', graphiks_path
