@@ -11,9 +11,9 @@
     = f.time_select :timeOfArrival
   .field
     = f.label :station
-    = f.select :station, Station.all.map {|e| [e.name, e.id]}
+    = f.select :station_id, Station.all.map {|e| [e.name, e.id]}
   .field
     = f.label :graphik
-    = f.select :graphik, Graphik.all.map {|e| ["Begin: " + e.station_begin.name + ", End:" + e.station_end.name, e.id]}
+    = f.select :graphik_id, Graphik.all.map {|e| ["Begin: " + e.station_begin.name + ", End:" + e.station_end.name, e.id]}
   .actions
     = f.submit 'Save'

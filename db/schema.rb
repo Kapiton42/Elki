@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20160519131320) do
     t.boolean  "friday"
     t.boolean  "saturday"
     t.boolean  "sunday"
-    t.integer  "graphik_id", null: false, unique: true
+    t.integer  "graphik_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,30 +43,33 @@ ActiveRecord::Schema.define(version: 20160519131320) do
 
   create_table "graphiks", force: :cascade do |t|
     t.integer  "station_begin_id", null: false
-    t.integer  "station_end_id", null: false
+    t.integer  "station_end_id",   null: false
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
 
   create_table "prices", force: :cascade do |t|
-    t.integer  "zones", null: false
-    t.integer  "priceOfTicket", null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "zones",           null: false
+    t.integer  "price_of_ticket", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "stations", force: :cascade do |t|
-    t.string   "name", null: false, unique: true
-    t.integer  "tarifZone", null: false
-    t.integer  "number", null: false, unique: true
+    t.string   "name",       null: false
+    t.integer  "tarif_zone", null: false
+    t.integer  "number",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "stations", ["name"], name: "index_stations_on_name", unique: true, using: :btree
+  add_index "stations", ["number"], name: "index_stations_on_number", unique: true, using: :btree
+
   create_table "time_of_arrs", force: :cascade do |t|
     t.time     "timeOfArrival", null: false
-    t.integer  "station_id", null: false
-    t.integer  "graphik_id", null: false
+    t.integer  "station_id",    null: false
+    t.integer  "graphik_id",    null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

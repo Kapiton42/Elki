@@ -5,7 +5,7 @@ class TimeOfArr < ActiveRecord::Base
   validate :further_station_validator
  	def further_station_validator()
  		if (station.number < graphik.station_begin.number) || (station.number > graphik.station_end.number)
- 			errors[:station] << 'Нельзя прибыть дальше конченой или начальной станции.'
+ 			errors[:station] << 'Вне конца и начала ты вряд ли побываешь.'
  		end
  	end
 

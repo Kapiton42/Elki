@@ -10,7 +10,7 @@
     = f.label :name
     = f.text_field :name
   .field
-    = f.label :tarif_zone
+    = f.label :tarifZone
     = f.number_field :tarif_zone
   .field
     = f.label :number

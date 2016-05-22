@@ -4,7 +4,7 @@
   %b Zones:
   = @price.zones
 %p
-  %b Price_of_ticket:
+  %b Priceofticket:
   = @price.price_of_ticket
 
 = link_to 'Edit', edit_price_path(@price)
