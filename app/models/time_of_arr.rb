@@ -10,5 +10,5 @@ class TimeOfArr < ActiveRecord::Base
  	end
 
  	validates :station, presence: true
-  	validates :graphik, presence: true
+  	validates :graphik, presence: true, uniqueness: {scope: [:station]}
 end

@@ -5,6 +5,8 @@ class CreateTimeOfArrs < ActiveRecord::Migration
       t.references :station, index: true, foreign_key: true, null: false
       t.references :graphik, index: true, foreign_key: true, null: false
 
+      t.index [:station_id, :graphik_id], unique: true
+
       t.timestamps null: false
     end
   end

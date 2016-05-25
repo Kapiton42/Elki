@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20160519131320) do
   end
 
   add_index "time_of_arrs", ["graphik_id"], name: "index_time_of_arrs_on_graphik_id", using: :btree
+  add_index "time_of_arrs", ["station_id", "graphik_id"], name: "index_time_of_arrs_on_station_id_and_graphik_id", unique: true, using: :btree
   add_index "time_of_arrs", ["station_id"], name: "index_time_of_arrs_on_station_id", using: :btree
 
   add_foreign_key "days", "graphiks"
